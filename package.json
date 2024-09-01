@@ -3,7 +3,8 @@
   "displayName": "Time Tracker By Sachin",
   "description": "Track time spent on VSCode",
   "repository": "https://github.com/Sachindebug/VSCode-Time-Tracker",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "icon": "Icon/icon.png",
   "engines": {
     "vscode": "^1.92.0"
   },
@@ -11,7 +12,7 @@
     "Other"
   ],
   "publisher": "Sachin7777",
-  "activationEvents": [],
+  "activationEvents": ["*"],
   "main": "./dist/extension.js",
   "contributes": {
         "commands": [
@@ -78,7 +79,15 @@
                     "description": "Use compact mode of the status bar."
                 }
             }
-        }
+        },
+        "propertiesOrder": [
+          "time-tracker.autostart.autoStartTimeTracking",
+          "time-tracker.dotTimeTrackerIndent",
+          "time-tracker.autostart.askAboutAutoStart",
+          "time-tracker.pauseAfter",
+          "time-tracker.autostart.autoCreateTimeTrackingFile",
+          "time-tracker.useCompactStatusPanel"
+        ]
     },
   "scripts": {
     "vscode:prepublish": "npm run package",
