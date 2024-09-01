@@ -13,17 +13,72 @@
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "time-tracker.helloWorld",
-        "title": "Hello World"
-      },
-      {
-        "command": "time-tracker.tellTime",
-        "title": "Get Time"
-      }
-    ]
-  },
+        "commands": [
+            {
+              "command": "time-tracker.recompute",
+              "title": "Time Tracker: Recompute total time"
+            },
+            {
+                "command": "time-tracker.start",
+                "title": "Start Time Tracker"
+            },
+            {
+              "command": "time-tracker.pause",
+              "title": "Pause Time Tracker"
+            },
+            {
+                "command": "time-tracker.stop",
+                "title": "Stop Time Tracker"
+            },
+            {
+                "command": "time-tracker.open-web-view",
+                "title": "Time Tracker: View Tracked Data"
+            }
+        ],
+        "configuration": {
+            "title": "Track Your Time",
+            "properties": {
+                "time-tracker.autostart.autoStartTimeTracking": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "start time tracking automatically if '.tracked-time-data' file already exists in the opened folder"
+                },
+
+                "time-tracker.dotTimeTrackerIndent": {
+                  "type": [
+                      "string",
+                      "null",
+                      "integer"
+                  ],
+                  "default": null,
+                  "description": "Indentation of '.tracked-time-data' file. If set to a number, it indicates the number of space characters to use as indentation. If set to a string, the string is used as indentation."
+                },
+
+                "time-tracker.autostart.askAboutAutoStart": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "Ask user about auto start time tracking when auto start or auto create is active"
+                },
+
+                "time-tracker.pauseAfter": {
+                  "type": "number",
+                  "default": 120,
+                  "description": "Time in seconds before the tracker will be paused due to inactivity. If set to 0 (zero) then auto pause will be disabled"
+                },
+
+                "time-tracker.autostart.autoCreateTimeTrackingFile": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Auto create '.tracked-time-data' file if Auto Start is active and the file does not exist"
+                },
+                "time-tracker.useCompactStatusPanel": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Use compact mode of the status bar."
+                }
+            }
+        }
+    },
   "scripts": {
     "vscode:prepublish": "npm run package",
     "compile": "webpack",
@@ -31,22 +86,26 @@
     "package": "webpack --mode production --devtool hidden-source-map",
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.92.0",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
+    "@types/vscode": "^1.92.0",
     "@typescript-eslint/eslint-plugin": "^7.14.1",
     "@typescript-eslint/parser": "^7.11.0",
-    "eslint": "^8.57.0",
-    "typescript": "^5.4.5",
-    "ts-loader": "^9.5.1",
-    "webpack": "^5.92.1",
-    "webpack-cli": "^5.1.4",
     "@vscode/test-cli": "^0.0.9",
-    "@vscode/test-electron": "^2.4.0"
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "moment": "^2.30.1",
+    "moment-duration-format": "^2.3.2"
   }
 }
