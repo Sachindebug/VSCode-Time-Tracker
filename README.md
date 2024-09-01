@@ -5,7 +5,7 @@ A VS Code extension to track time spent working on a project.
   - Start: To start tracking the time
   - Stop: To stop tracking of time
   - Pause: To Pause current tracking session
-  - View Tracked Data: To view time spenet every day in last 1 week as bar graph
+  - View Tracked Data: To view time spent every day in last 1 week as bar graph
 
 ## Features
   - Commands to start, stop, pause and view tracked data.
