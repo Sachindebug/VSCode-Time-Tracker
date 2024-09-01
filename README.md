@@ -14,6 +14,12 @@ A VS Code extension to track time spent working on a project.
   - A bar graph UI showing details for last 7 days
   - status Bar item to show time for current session and stop,start or pause tracking.
 
+## Settings
+  - Start auto tracking (default yes)
+  - Time to pause tracking in case of inactivity (default 2 mins)
+  - create file .tracked-time-data if it do not exist (default yes)
+  - Use compact mode of status bar (default No)
+
 ## Screenshots
 <img width="690" alt="Screenshot 2024-09-01 at 5 45 25 PM" src="https://github.com/user-attachments/assets/42bd016e-ba56-469a-bb12-b864884cbf76">
 <img width="306" alt="Screenshot 2024-09-01 at 5 45 13 PM" src="https://github.com/user-attachments/assets/8bd75755-8f8f-4ea7-8381-a368e8c3e3b9">
