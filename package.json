@@ -1,7 +1,8 @@
 {
-  "name": "time-tracker",
-  "displayName": "Time Tracker",
+  "name": "time-trakcer-tt",
+  "displayName": "Time Tracker By Sachin",
   "description": "Track time spent on VSCode",
+  "repository": "https://github.com/Sachindebug/VSCode-Time-Tracker",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.92.0"
@@ -9,7 +10,7 @@
   "categories": [
     "Other"
   ],
-  "publisher": "Sachin",
+  "publisher": "Sachin7777",
   "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
